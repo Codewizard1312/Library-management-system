@@ -71,6 +71,3 @@ The `main()` function provides a simple menu-based interface for interacting wit
    - The program will prompt you with a menu to interact with the library system.
 
 ---
-
-### **License**:
-This project is for educational purposes and is released under the MIT License.
