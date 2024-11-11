@@ -1,60 +1,76 @@
+# Library Management System in C
 
+This is a simple **Library Management System** written in **C**. It allows users to:
+- Add books to the library.
+- Borrow books from the library.
+- Return books and calculate late fees based on the return date.
+- View available books in the library.
 
-Library Management System - C Program
+### Features:
+- Track available books, borrowed books, and due dates.
+- Calculate late fees (5 rupees per day) for overdue books.
+- Borrower details (name, book ID, issue date, due date) are stored.
+- Supports basic operations like adding books, borrowing books, and returning books.
 
-Overview
+---
 
-This C program implements a simple Library Management System that allows users to add book details, display book details, and check the total number of books in the library. The user can interact with the system via a menu-driven interface.
+### **How the System Works:**
 
-Features
+1. **Adding Books**: 
+   - New books can be added to the system with their title, ID, and total number of copies.
+   
+2. **Borrowing Books**:
+   - The user can borrow a book by providing the book ID and the borrower's name.
+   - The issue date is recorded and a due date (14 days from the issue date) is automatically assigned.
 
-1. Add Book Details: Allows the user to enter details of a new book, including the book name, author name, and the date of issue.
+3. **Returning Books**:
+   - The user can return a book, and the system will check if it is returned late.
+   - Late fees of 5 rupees per day will be applied if the book is returned after the due date.
 
+4. **Displaying Available Books**:
+   - The user can see all available books in the library, along with how many copies are available for borrowing.
 
-2. Display Book Details: Displays the list of books in the library, including the book name, author name, and the date of issue.
+---
 
+### **Code Explanation**:
 
-3. Display Total Number of Books: Displays the total number of books in the library.
+This is the implementation of a simple library system where we use structures to store the details of books and borrowers.
 
+#### Structure Definitions:
+- **Book**: Contains details about each book such as ID, title, total number of books, and the number of borrowed books.
+- **Borrower**: Stores information about each borrowing transaction, including the borrower's name, issue date, due date, and whether the book has been returned.
+- **Library**: Holds the entire library system, including arrays of books and borrowers, as well as counters for the number of books and borrowers.
 
-4. Exit: Exits the program.
+#### Functions:
+1. `initializeLibrary()`: Initializes the library with no books and no borrowers.
+2. `addBook()`: Adds a new book to the library.
+3. `borrowBook()`: Handles the borrowing of a book, including setting the issue and due dates.
+4. `returnBook()`: Allows the user to return a book and calculate late fees based on the return date.
+5. `displayBooks()`: Displays all the books in the library, including how many are available for borrowing.
 
+#### Main Function:
+The `main()` function provides a simple menu-based interface for interacting with the library system. The user can choose to display available books, borrow a book, return a book, or exit the system.
 
+---
 
-Menu Options
+### **Instructions to Run:**
 
-1. Add Book Details: Prompts the user to enter book details (book name, author name, and date of issue).
+1. **Compiling the Code**:
+   - Save the code to a file named `library_system.c`.
+   - Open a terminal and navigate to the directory where the file is saved.
+   - Run the following command to compile:
+     ```bash
+     gcc library_system.c -o library_system
+     ```
 
-2. Display the List of Books and Its Details: Displays all stored books with their respective details.
+2. **Running the Program**:
+   - After compiling, run the program by typing:
+     ```bash
+     ./library_system
+     ```
+   - The program will prompt you with a menu to interact with the library system.
 
-3. Display the Total Number of Books: Displays the total number of books in the library.
+---
 
-4. Exit: Terminates the program.
-
-
-Code Explanation
-
-Struct Definition
-
-The program uses a struct called library to store information about a book. The structure contains:
-
-book_name: A string (character array) to store the name of the book.
-
-author_name: A string (character array) to store the name of the author.
-
-date_of_issue: A floating-point number to store the date of issue of the book.
-
-
-Main Program Flow
-
-Menu System: The program operates in a loop that continuously displays a menu for the user to choose an action. The loop exits when the user selects option 4 (Exit).
-
-Adding Books: In case 1, the program asks for the book's name, author's name, and the date of issue, storing these details in the lib[] array.
-
-Displaying Books: In case 2, it displays the stored book information in the lib[] array.
-
-Counting Books: In case 3, it prints the total number of books stored in the library.
-
-Exiting: In case 4, the program terminates using exit(0).
-
-
+### **License**:
+This project is for educational purposes and is released under the MIT License.
